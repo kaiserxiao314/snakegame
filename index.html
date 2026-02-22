@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Snake - 10x70 Grid Challenge</title>
+    <meta name="description" content="A premium, neon-styled Snake game featuring a unique 10x70 grid challenge. Experience smooth animations and sleek glassmorphism design.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="game-container">
+        <header class="game-header">
+            <h1 class="glow-text">NEON<span>SNAKE</span></h1>
+            <div class="stats-container">
+                <div class="stat-card glass" id="score-card">
+                    <span class="stat-label">SCORE</span>
+                    <span class="stat-value" id="score">000</span>
+                </div>
+                <div class="stat-card glass" id="high-score-card">
+                    <span class="stat-label">HIGH SCORE</span>
+                    <span class="stat-value" id="high-score">000</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="game-board-wrapper glass">
+            <div id="game-board" class="game-board" style="--cols: 70; --rows: 10;">
+                <!-- Grid items will be injected or we use canvas -->
+                <canvas id="game-canvas"></canvas>
+            </div>
+        </section>
+
+        <footer class="game-controls">
+            <div class="control-hints glass">
+                <p>Use <span class="key">WASD</span> or <span class="key">Arrows</span> to Navigate</p>
+                <p>Challenge: <span class="highlight">10 x 70 Box</span></p>
+            </div>
+            <button id="start-btn" class="btn-primary">START GAME</button>
+        </footer>
+    </main>
+
+    <div id="game-over-modal" class="modal glass hidden">
+        <div class="modal-content">
+            <h2 class="glow-text">GAME OVER</h2>
+            <p>Your Final Score: <span id="final-score" class="highlight">0</span></p>
+            <button id="restart-btn" class="btn-primary">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
